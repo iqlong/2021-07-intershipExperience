@@ -1,0 +1,964 @@
+2021 年 07/28
+  axios学习：**返回的是一个promise承诺对象
+    概念：是基于promise封装的纯粹的HTTP库，可运行在浏览器和nodejs中
+    get请求参数放在params中
+    post请求参数放在data中
+
+    使用idea
+
+07/29			
+   学习git技术之 分支
+   	git add .
+	git commit -m 'f'
+	git remote add origin http://xxx.git
+	gir push origin master 
+
+	关联分支的命令：
+	   git branch -set-upstream-to origin/develop develop;
+	解除关联分支：
+	   git remote remove origin
+	关联新的远程分支：
+	   git branch -set-upstream-to orign/newBranch newBranch
+	
+	git add .	git commit -m ' '	git pull	git push
+
+	分支之间相互调用 
+	  git merge 
+
+    闲来之谈：
+
+
+8/09：
+    最后一遍，最后一边：
+       JSON.parse(): 这个gdx是将一个字符串解析出josn对象
+       JSON.stringify()：是从一个对象中解析字符串
+
+8/12
+    es6之前，社区制订了一些模块加载方案，最主要的有CommonJS和
+    AMD两种，前者用于服务器，后者由于浏览器。
+        例如：CommonJS是运行时加载，  对象
+	      es6是编译时加载
+
+	      import和export  export default
+	      	export：必须输出接口
+			export var a = 1;
+			or  export {a}
+	        import：必须要加入{}  除了模块的整体加载和默认加载
+
+8/16
+    vue奶茶三兄弟
+      组件是可复用的vue实例，为了将组件，先去掉路由部分
+
+8/19
+    路由传参：1）路径匹配：  第一种：to接一个字符串    第二种：:to  -》 " {} "
+	      2）params参数
+
+
+9/02
+   this的讲解：相对有其他语言，函数的this在js中的表现略有不同，此外，
+   在严格模式和非严格模式中也是有不同的：
+	严格模式this没有调用者,this为undefined;默认(非严格):没有调用,this为window   <call,apply,bind>
+
+	  不在意+似懂非懂+却比较重要+接近本源：this是运行时绑定
+
+	 shell：壳   即是一种命令语言，也是一种程序设计语言
+	  scale():css中计算函数    eval(): js中计算函数    calc: win+r的打开计算器命令
+	  scale：规模		   evaluate：评估	   calculate：计算	dxdiag: 查看电脑配置
+	 
+  异步编程的发展：开始：回调函数和事件 ----> Promise  
+              异步操作同步化
+    Promise：一个对象，代表一个异步操作完成或者失败，多数人仅仅使用自己创建的Promise对象
+       一个可以绑定回掉函数的对象(函数返回对象)，这样就不用将回掉函数作为参数传入到函数中
+
+       axios的返回值就是一个promise，所以可以axios的时候使用链式调用;但是这样就没有了reject和resolve
+          return的promise对象，reject就没有办法加上吗
+
+	  this中只有生命周期钩子函数中的this指向vue实例对象
+	  dom中this的指向，箭头函数中this的指向   外层是上一层吗
+
+9/09
+    web存储：
+    	cookie：产生于服务器，
+
+9/23
+    使用函数function和function()的区别
+    	其中的function一般出现在函数传参中：
+	function()就是执行*就一次*函数
+	例如：
+	    setInterval(function,1000)	    
+	    	↑每隔1秒都会执行一次函数
+	    setInterval(function(),1000)
+	    	↑只会执行一次function!!!
+	   其实总结起来如下：
+
+函数只要是要调用它进行执行的，都必须加括号。此时，函数()实际上等于函数的返回值。当然，有些没有返回值，但已经执行了函数体内的行为，这个是根本，就是说，只要加括号的，就代表将会执行函数体代码。
+
+不加括号的，都是把函数名称作为函数的指针，用于传参，此时不是得到函数的结果，因为不会运行函数体代码。它只是传递了函数体所在的地址位置，在需要的时候好找到函数体去执行。
+
+  基本包装类型：
+	Number的转换函数：是将其他类型转化为number类型
+	Number的构造函数：将其他转为Number类型（和自动拆箱装箱比较！）
+所以string可以包装为String，使用一些方法来操作string
+String--length:		获取字符串长度
+    //所以说，有参数就是查找指定位置
+    charAt(i):		返回指定位置的字符 ---> 类似
+    charCodeAt(i):	返回指定位置的字符的字符编码
+    indexOf():		从前后查找指定字符所在位置
+    lastIndexOf():	从后往前查找指定字符所在位置
+    //////////上面的是字符串的查///////////查了不可以改！！和数组不一样的
+
+    //////想新增和删除还得使用方法切割然后再组合/或者转变为数组//////////////
+    concat()：		将一个或者多个字符串合并起来
+    slice():		截取字符串（开始-结束位置,不包括结束位置)
+    substr()；		（开始位置，截取个数）
+    trim（）：		删除前置和后置中的空格	
+    toLowerCase():	转为小写
+    toUpperCase():	转为大写
+Math--
+ 比较方法：
+    Math.min()
+    Math.max()
+ 小数舍弃：
+    Math.ceil()   上舍 floor  round
+
+Date---
+    getFullYear->getYear(会减去1900)  getMonth()  getDate  getHours getMinutes getSeconds
+	**getDay()：返回的是星期几(0-6)
+    唯一一个稍微单用有用的：toLocalString()
+
+Array
+     toString;join=>将数组变为字符串;
+       改变数组的方法：浅拷贝	
+       		增
+          后入：push
+	  后出：pop
+
+	  前入：unshift
+	  后出：shift
+	  reverse();sort();==>注意：return a-b只有在数组是数字的时候可以用
+	  	删除  随机增
+	  比较复杂的splice：三参；前面两必须要有--- 起始位置 删除数 替换*多个
+	不改变数组的方法：深拷贝
+	  concat();slice();==>切割开始位置到结束位置(不包括结束位置)
+	  indexOf() lastIndexOf()
+	迭代的几个方法：
+		true/false
+	  every()	some()	
+	  	返回的曾为一个数组
+	  filter()   map()  
+	  	无返回值
+	  forEach()
+
+9/27
+   文本中快捷键的使用总结
+      通用(editPlus和word都可以用)篇：
+         alt+鼠标：选中多行同列
+	 home/ctrl+home   end/ctrl + end：页面的开始和结尾;其中在editPlus中end选中行尾，ctrl+end选中页面尾部
+	 shift + 鼠标：   选中开始和结尾
+      
+      Word中可以使用的：
+         ctrl + 鼠标：    选中多个无关联的东西，鼠标点击可以取消
+
+9/28
+   url（Uni  Resource Locator,统一资源定位符）:
+	协议名+主机名和路径+文件名 ：协议、主机、端口和文件
+		主机地址（域名或ip）和端口号
+
+*****      终极任务：比较谷歌翻译和百度翻译的前端风格;照着学一下--html和css
+    *****   那些所谓的变形和巩固老的东西：float、display布局和一些标签属性
+		*****   css新的东西和flex布局和变形and so on   
+	   *****    在在线运行中看element的源码
+
+
+  笔记：
+      HTML中的5种空格实体：
+          &nbsp;	不换行空格,是按下*空格键*产生的空格
+	  &ensp;	半角空格    1/2个中文宽度
+	  &emsp;	全角空格    1个中问字符
+	  &thinsp;
+	  &zwnj;
+	  
+
+9/30
+ 模板数据类型
+     表达式请放在${}中，类似于三目运算符，and其中的字符串是要加上引号的
+     反引号``中，${}外的字符类型是不用加引号的
+        vue中:para=``要用引号包裹，:para="``"
+	还有vue的v-on绑定事件的时候：可以写语句也可以写函数：
+	    只写函数的时候可以不加(),但那时语句和函数混合的时候,函数必须要加括号,不然函数识别为为赋值的变量
+   
+ 和for of和for in   可迭代对象
+
+10/03
+函数中的属性：
+  this：把函数当成方法调用的上下文对象(跨层找this丶对象[函数不算]，箭头函数和)
+      参数中的this和*本函数this为window*都为window/{}
+  caller：调用当前函数的函数(会跨层去找上级丶函数)
+  callee: 是arguments的属性，用于arguments.callee指向当前函数
+
+  之中又出现了一下改变this的函数中的方法：
+	call():		 改变this值,传入的参数是数组
+	apply():	         ...传入的参数,分隔       上面两都有输出!
+	bind():		 返回一个新的函数实例,		  无输出!
+
+  其中
+js运算符：
+  ==和===对于两个对象而言，都是判断两对是否是完全相同的对象--->地址完全相同!
+ 
+10/04
+主要的匿名函数，伴生的life函数
+    对于匿名函数定义一次后不好再次调用的问题：
+       例如：function() {}
+          可以这样-> (function() {}) ()
+       即，以life函数的方式执行,原理：()的作用就是将表达式分块,并且每个表达式都是由返回值的
+       且-> 有一个很有意思的例子：a = function() {}()可以代替匿名函数的life写法
+             调用的时候直接：a,就可以了,不用a()：这样会a is not a function!   
+	tip: return的函数不会自动执行
+
+*****  js代码中var定义的可以理解为window中，let却不知道定义到哪儿去了
+    this在html中试试
+
+  函数外部获取函数内部的属性和方法->函数和对象不同，不可以obj.params
+      new 一个实例,通过实例调用  
+         var x = func() {let x};
+	 new x; x.x
+      函数内部主动通过return暴露
+
+  文字就是要掉下来！！！
+
+ 10/8
+  vue配置相关
+   vue-loader是一个webpack的loader，允许用一种单文件组件的方式(SFCs)的格式撰写vue组件：
+     .vue是一个自定义的文件类型，用类html语言描述一个vue组件--->三大顶级语言块<template><script><style>;允许添加可选的自定义块
+     vue-loader解析.vue文件(若有必要用其他loader),解析后组合为ES Moudel,默认导出的是一个vue.js组件选项的对象
+         <template>: 内容会被提取并且传递到vue-template-compliler中为字符串,预处理为js渲染函数;最终注入到<script>导出的组件中
+    *简而言之：vue-loader + webpack结合提供了一个强大，灵活，现代的前端工作流;来帮助撰写vue.js应用 
+
+  npm(node package Manager): 即是js世界的包管理工具，也是node.js平台的默认包管理工具.通过npm可以安装，共享，分发代码：管理项目依赖关系
+     vs yarn(一个比npm体验感更好的包管理工具)
+   --save和--save-dev
+    全局安装、本地安装(局部安装)	开发依赖、生产依赖	开发环境、生产环境
+
+10/9
+  /deep/的使用：由于scoped会自动加id
+     若a > b: 目的是为了a是有id的，给没有id的b加样式,由于有scoped会自动给a和b都加上id
+     /deep/的作用就是让a加上,b不加上：即a /deep/ b
+    
+10/13 
+  js中的for循环：
+     for、for in、for of(Es6)、forEach(Es5)
+
+ 
+ webstorm中代码上下移动快捷键：shift+alt+上下键
+
+10/21
+  js单线程：
+     同步： 
+     微任务：
+     	Promise.then().catch().finally()
+	MutationObserver
+	Object.observe 
+     宏任务：
+     	新程序或者子程序被直接执行
+	事件的回调函数
+	setTimeOUt setInterval()
+
+	执行顺序：
+	    执行完同步任务=清空调用栈		大米饭
+	    执行微任务=微任务队列		软菜
+	    执行宏任务=宏任务队列		硬菜
+	      注意：在执行宏任务之前浏览器可能会发生渲染(生动的说：在软菜执行完后会上菜)
+			！！！！！理解宏任务：新任务执行就是宏任务
+
+	例如：//宏任务和微任务的使用（优先级最好的就是调用栈--同步）
+	console.log('一缸白米饭');
+	setTimeout(function() {
+	    console.log('红烧鸡屁股');
+	},200);
+	Promise.resolve().then( () => {
+	    console.log('白灼黑木耳');
+	});
+	console.log('一盘白开水');
+	Promise.resolve().then( () => {
+	    console.log('榴莲拼盘');
+	});
+	setTimeout(function() {
+	    console.log('芥末炒鱼头');
+	    console.log('麻辣乳猪头');
+	},0);
+	Promise.resolve().then( () => {
+	    console.log('麻婆豆腐');
+	});
+
+	解释：
+	   宏任务：
+	        script --> 当微任务执行完后去除
+		setTimeout('红烧鸡屁股')
+		setTimeout('芥末炒鱼头')
+		setTimeout('麻辣乳猪头')
+	   微任务：
+	   	Promise.then('白灼黑木耳')
+		Promise.then('榴莲拼盘')
+		Promise.then('麻婆豆腐')
+	   调用栈：
+	        script(任务全部加载完后去除)  ×××
+	   控制台：
+	        一缸白米饭
+		一盘白开水
+
+		先执行宏任务，因为script是打头的
+	    1.在调用栈为空的时候，时间循环优先执行微任务
+	    2.在清空微任务后才会看需不需要渲染
+	    3.渲染过后事件执行下一轮宏任务
+
+	    宏任务(这儿是script,调用栈为空时)  --->   微任务  --->   渲染   --->  宏任务
+	                    事件循环
+		宏任务  --->   微任务  --->   渲染   --->  宏任务
+
+ 从http1到http3：
+	虽然最近几年网络带宽增长速度十分块，然而我们并没有看到网络延迟有任何程度的降低
+    http1的缺陷：
+       1.高延迟性：队头阻塞(Head-Of-Line Blocking)，导致带宽无法被充分利用
+
+       2.无状态性：导致巨大的HTTP头部
+
+       3.明文传输
+	
+	4.不支持服务器推送消息
+    
+    SPDY协议到HTTP/2（最大的目标就是在用户和网站间只用一个连接）简介
+      SPDY(2009)位于HTTP(2015)之下：SPDY协议在Chrome浏览器上证明可行后，就被当作HTTP/2的基础
+	HTTP
+	SPDY
+	SSL
+	TCP
+   
+    	1.二进制方式传输和压缩header;相对于HTTP1的纯文本形式的报文
+	2.多路复用
+	3.Serve Push：Http2还在一定程度上改变了传统的“请求-应答”工作模式
+	4.本依旧是“明文”，实际上在浏览器上是加密过的
+
+    Http3：由于Http2(TCP连接)的大缺点：主要是底层支撑的 TCP 协议造成的
+       Google在开发SPDY的时候就已经意识到了问题，于是就另起炉灶搞了一个基于 UDP 协议
+       的“QUIC”协议
+总结
+HTTP/1.1有两个主要的缺点：安全不足和性能不高。
+
+HTTP/2完全兼容HTTP/1，是“更安全的HTTP、更快的HTTPS"，头部压缩、多路复用等技术可以充分
+利用带宽，降低延迟，从而大幅度提高上网体验；
+
+QUIC 基于 UDP 实现，是 HTTP/3 中的底层支撑协议，该协议基于 UDP，又取了 TCP 中的精华，
+实现了即快又可靠的协议。
+
+Dom操作：
+   createElement
+
+   createAttribute   attr.setVaule
+   node.get/setAttribute
+
+   createTextNode
+   多种属性操作文本类型：
+      node.innerHTML  node.innerText  node.textContent nodeValue
+
+
+10/22：前后端传值的总结来啦！
+    http请求参数方式类型：query string parameters | formData | request PayLoad
+
+    进制的转换：
+        toString(index);  parseInt(string,index)： 不管啥都转成number(10进制)
+
+ $.type()：非常好用！
+
+
+10/25
+cmd命令：msinfo32  dxdiag
+js的debug使用:  debug: Open Link   
+	需求：先打开一个live server的html，然后输入命令，在输入带的的live的url就可以
+	      在vscode中debugjs代码啦
+	PigchaProxy.exe
+	qq中ctrl+alt+o：文字识别(类似ocr：Optical Character Recognition，光学字符识别)
+
+10/26
+反赋值web文字：
+	javascript:void($={});+ie内核
+	qq内置orc+ctrl+p打印
+	f12/download(ctrl+s)
+
+bilibili  up主：技术蛋老师
+	<p>一二三四</p>   
+	目标：只改变p中的第一个汉字
+     p::first-letter {color: white;}
+
+***注意css2和其之前：伪类和伪元素都是只有个一个:  但是虽然到后面伪元素改成了::但是有的浏览器为了向前兼容,还是都用一个:
+   伪类           和			   伪元素的总结
+
+:相当于太监				 ::相当于皇帝，比太监多两个.
+可以出现在任意位置，有多个		  只能出现在最后，只能有一个
+
+伪类(使用很多，种类也很多)可以分为：
+状态类：   :link,  :visited,  :hover,  :active,  :focus
+结构类：   :first-child,  :last-child,  :nth-child(前面的元素当做儿子),  :nth-of-type(前面的元素作为兄弟)
+表单结构:  :checked,  :disabled,  :valid,  :required
+语言类：   :dir,  :lang
+
+伪元素(使用较少，种类也少)同样可以分为：
+	::before,  ::after
+	::first-letter,  ::first-line
+	::selection,  
+	::placeholder
+	::backdrop
+
+小总结：
+	    语法	数量	位置	      类与元素	       使用场景
+
+伪类	     :          多个    前和后     修饰也存在的dom        多
+
+伪元素       ::         单个     后方        创建虚拟dom          少
+
+
+10/27
+  1）web安全之文件上传漏洞攻击与防范方法
+	1.1 文件上传漏洞与WebShell的关系
+	其中WebShell：就是以asp、PHP、jsp或者cgi等网页文件形式存在的一种米宁执行环境，
+	也可以成为一种网页后门。
+
+	1.2 文件上传攻击实例
+
+   2）html知识
+	href和src的区别
+	  href: Hypertext Reference	<link> <a>
+	  src:  source			<img> <style> <script> <input> <iframe>		
+	src: 下载-代替当前元素-嵌入到文档中
+	href：超链接-会建立一个通道-将当期那文档和引用资源相连接系
+   3）css知识：css中的calc    js中的eval
+	calc的使用：
+      
+      @3.2 脱离文档流的一些总结  **relative不脱离和stiky
+        1.float脱离文档流：盒子会无视这个(设置为float的元素)，但是文字会让出这个位置，环绕显示
+	2.absolute：向父级别找position的，到顶还是没有就默认文档流的也可以
+	3.fixed：相对于视口，完全脱离
+		小提示：relative中的top就是现在的div-top和之前的div-top相距x-px
+		        所以left像是右移，top像是往下移动
+	4.sticky是类似relative和fixed的结合，不脱离文档流
+	   flex也不脱离文档流
+
+      @3.3 前端的一些优化问题：重绘(repaint)和回流(reflow)：  可以是部分树，也可以是全部
+         其中，回流也叫重排，回流的成本大于重绘，就是说：
+	 ---重绘不一定需要重排（比如颜色的改变），重排必然导致重绘（比如改变网页位置）
+		***当获取某些属性的时候，浏览器为了获取到正确的值也会触发重排
+		这些属性包括：offsetTop、offsetLeft、 offsetWidth、offsetHeight、scrollTop、
+		scrollLeft、scrollWidth、scrollHeight、clientTop、clientLeft、clientWidth、
+		clientHeight、getComputedStyle() (currentStyle in IE)。
+		   所以，再多次使用这些值的时候要进行缓存
+	 了解浏览器的渲染机制：
+	    1）浏览器采用流式布局模型
+	    2）首先浏览器会将html解析为DOM；css解析为CSSOM;
+	       把CSSOM和DOM结合产生为render tree。
+	    3）有了render tree后知道了节点样式，然后浏览器会计算节点的位置，然后把节点
+       	       绘制到页面上
+		***用百分比布局时候，视口变小就会触发回流
+		    ？？？？激活css伪类也会触发回流？？？？
+	***为动画的 HTML 元件使用 fixed 或 absoult 的 position，那么修改他们的
+	   CSS 是不会 reflow 的。
+	避免新能影响：
+	  css：
+	    避免table布局，table是一个大模块，加载完后才会页面显示
+	    避免设置多层内联样式
+		3.千万不要使用 table 布局。因为可能很小的一个小改动会造成整个 table 的重新布局。
+
+　　　　　　　　table及其内部元素除外，它可能需要多次计算才能确定好其在渲染树中节点的属性，通常
+		要花3倍于同等元素的时间。这也是为什么我们要避免使用table做布局的一个原因。
+
+	  js：
+	    避免频繁操作dom
+	    对于大量的dom插入，建议使用文档片段，也就是documentFragment.
+	    
+　　　　　　3.不要在布局信息改变的时候做查询（会导致渲染队列强制刷新）　　
+
+10/28
+小总结：
+
+
+10/29
+    array迭代方法：其中函数中的参数都是一样的
+      有返回值的：判定条件都写在return 后面
+         every：	对于所有满足条件(写在return后面)的数组返回true
+	 some：		数组某一项满足就返回true
+	 filter：	返回满足条件的数组item
+	 map：		返回所有item改变后的值
+
+      少见的无返回值的：多用于遍历console.log数组
+	forEach(item,index,array)
+
+递归：recursion
+
+10/31 30号搬家后的第一天
+   其中setTimeout和setInterval中的callback函数不可以执行，不然会报错
+
+11/1
+    array->es6扩展的Map和Set
+      Map：增删改查方法
+        size方法可以返回set的长度
+        set方法向其中放键值对，get更具键名获取特定的值                 
+	has方法判断Map对象是否存在key，有则返回true，否则返回false
+	delete：通过键值从Map中删除对应的数据
+	clear():删除整个的Map元素
+
+     ：遍历方法
+	key(): 返回键名的遍历器
+	values(): 返回键值的遍历器
+	entries(): 返回键值对的遍历器
+	forEach(): 返回回调函数遍历每个对象
+
+
+      Set：增删改查方法
+        由于set相对于map是一维的，所以map中的set方法在变成了add方法；
+
+      ：遍历方法
+         keys(): 返回键名的遍历器
+	 values(): 返回键值的遍历器
+	 entries： 返回键值对的遍历器
+	 forEach(): 返回回调函数遍历每个对象
+   细节操作：
+     关于set：
+        若是add已存在的基本数类：加不进去
+	若是键值一样的对象：可以不覆盖的加入
+     关于map：
+     	键存在的话会更新值
+
+    巩固三大天王 ，从html刷题开始 css 到js   今天是html的form表单内容
+    小全栈以及phpstudy的开始使用：
+    	遇到的问题：数据库启动不了
+	解决途中下载了一个everything的检索软件
+    并且揠苗助长的vue和cli webpack也要有计划的开始啦
+         
+	 
+11/02
+   那些烦人的删除时提示进程被占用的找到进程并kill的方法：
+	打开任务管理器(性能一项) -> 资源管理器 -> cpu -> 搜索句柄(你想找的文件名)
+   查看电脑端口id的使用情况
+   	netstat的使用		参数忘记了就用：netstat -help
+	查看所有的相关信息(其中-o貌似有的是显示计时器，有的是显示端口号：linux和windows的区别？)
+		查看某个具体的端口号是否被占用: 
+				netstat -ano|findstr "端口号"/pid
+	查看进程(有些鸡肋)
+		tasklist |findstr "pid"
+	命令启动任务管理器：taskmgr
+  总结：解决占有用句柄搜索，看pid在详情中看，端口号用metstat命令看，也可以用工具【tcpview】一览无余
+AND 比cmd更加丰富的powershell：后者包含了linux命令
+
+HTML先冲锋：
+   web开发中的长度单位： 像素：px，字体高度：em，字母x的高度：ex，百分比：%...
+   	绝对长度单位：一个固定的值，一个真实的物理值，它不随设备或者受别的因素影响的长度单位。
+		具体包括：cm mm in英寸 pt点 pc派卡
+	相对长度单位：
+	    包括：
+		px：相对于显示器分辨率而言：唯一的缺陷---ie无法调整px的字体大小
+		em：元素的字体高度：相对于父元素的属性值，需要参考点。一般都是以
+		    font-size为参考，浏览器默认的字体高度是16px，so默认1em=16px。
+		    又是可在body选择器中font-size=62.5%；此时1em=16px*62.5%=10px
+		ex：所有字体元素中小写x的高度：和字体有关；使用较少
+		    一般在设置em后，ex就会默认为em的一半
+			也有为计算方便，将1ex假设等于0.5em,原因在于，大多数的字体的小写字母都是相应大写字母高度的一半。
+		rem：相对于em多一个r，css3新增的一个相对单位--root em的简写。
+		     rem相对的只是HTML根元素。 目前，除IE9以下的版本外，所有浏览器均已支持rem。
+
+
+
+*****      hr是一条线，css不简单呐变形啥的css3.....  HHHH5呐
+   ！！jquery的事件绑定和js不同啦： $().click(function() {})
+
+	   indexDB是h5的本地存储，把一些数据存储到浏览器(客户端中)
+	   Cookie 通过在客户端 ( 浏览器 ) 记录信息确定用户身份，最大为 4 kb 。
+
+	url 参数用的是 get 方法，从服务器上获取数据，大小不能大于 2 kb 。
+
+	Session 是服务器端使用的一种记录客户端状态的机制 。
+
+	post 是向服务器传送数据，数据量较大。
+
+	local Storage 也是 HTML5 的本地存储，将数据保存在客户端中（一般是永久的）。
+i cite：都会便斜       em，strong：加粗的程度不同	base：默认的url，还可以设置target！
+
+DHTML（css+html+js+dom）实现了网页从Web服务器下载后无需再经过服务的处理，而在浏览器中直接动态地更新网页的内容、排版样式和动画的功能。例如，当鼠标指针移到文章段落中时，段落能够变成蓝色，或者当鼠标指针移到一个超级链接上时，会自动生成一个下拉式子链接目录等。
+包括：
+    ①动态内容(Dynamic Content)：动态地更新网页内容，可“动态”地插入、修改或删除网页的元件，如文字、图像、标记等。
+    ②动态排版样式(Dynamic Style Sheets)：W3C的CSS样式表提供了设定HTML标记的字体大小、字形、样式、粗细、文字颜色、行高度、加底线或加中间横线、缩排、与边缘距离、靠左右或置中、背景图片或颜色等排版功能，而“动态排版样式”即可以“动态”地改变排版样式。
+ !!td标签要嵌套在tr里面
+
+ 浏览器：
+ 	一直到ie9：都是Trident内核
+	firefox:   是Gecko内核
+	chrome：   是Blink内核  
+:nth-child()的理解：css3新加---->只要an+b的结果大于0，n从0开始
+快级元素不可以获取焦点吗？？？
+xml json h5也有联系?
+
+h5的新加的东西以及一些优化需要的知识点 (正确性，健壮性，效率，易用性，可理解性，可测试性，可维护性，可移植性)
+   媒体支持问题：不同浏览器以及版本可能对文件格式的支持不同，多放几个以保证播放成功概率高	正确性
+   提供备份支持： 若是浏览器两个支持，其中一个文件出了问题，还有被份				健壮性
+	
+	h5中初级硬件加速和变形的使用
+
+
+  tomcat 与 nginx，apache的区别是什么？
+  ***其中apache准确来说：是Apache公司的一个项目------Apache HTTP Server Project
+		tomcat： 。的另一个项目------Tomcat能够动态的生成资源并返回到客户端(和上面的比)。
+HTTP服务器本质上是一种应用程序：但是它通常运行在服务器上上面;绑定服务器的IP地址并且监听
+某个tcp端口来接受并且处理HTTP请求。这样B端可以通过HTTP协议来获取服务器上的信息
+
+小总结：Apache HTTP Server和Nginx本身不支持生成动态页面，——也就是说无论何时、任何人访问它得到的
+	内容都是完全相同的，这样的资源我们称之为静态资源。但它们可以通过其他模块来支持
+	（例如通过Shell、PHP、Python脚本程序来动态生成内容）。但是tomcat可以动态的生成资源并返回到客户端。
+
+	window 的 onload 事件需要在所有 iframe 加载完毕后（包含里面的元素）才会触发。
+
+11/04  html中引入css的方式
+    1.行内(内联)style   特性值为1000
+    2.嵌入方式
+    3.链接方式（归于html）【这种方法是比较好的引入方式】
+    	<head>
+	    <link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+    4.导入方式（归于css，要写在css中，也就是需要被style包裹）
+    	<style>
+	    @import url(style.css);
+	</style>
+
+    稳固Vue.js：
+        初见vue于html的引入，开发者版本和生产者版本。  // 以阻止 vue 在启动时生成生产提示。
+	chrom的console中会有提示信息：安装vue插件和提示Vue.productionTip = false;
+      
+        html中引入了vue.js，相当于在全局加了一个Vue构造函数，并且构造函数中的el属性
+	是''引起来的选择器，也可以写document.getElementById('#')去获取dom，其中的
+	data中的数据都是供el指定的容器去使用
+
+11/17
+      表格的一些使用的东西：
+		重置按钮：queryParam和sortParam都要置空
+		查询按钮：只将sortParam置空
+		分页按钮：将sortParam改变
+		
+		   然后!! => 都在使用的函数：查询searchMethod
+
+11/18 上传和下载axios要加的东西
+    调用接口下载：
+    	request.get('/manager/service/download/excel',{
+	     hearder: {needResponse: true},
+	     responseType: 'arraybuffer'
+	})
+
+     调用接口上传
+     	let form = new FormData();
+	form.append('file',this.nowFile)
+	request.post(url,form, {headers: {"Content-Type": "multipart/form-data"}})
+
+    <!--<el-upload-->
+  <!--    class="upload-demo"-->
+  <!--    action="https://jsonplaceholder.typicode.com/posts/"-->
+  <!--    :on-preview="handlePreview">-->
+  <!--</el-upload>-->
+
+  <!--<el-input type="file" placeholder="请选择jar文件" :value="fileName" size="small"-->
+  <!--          id="uploadFileId" @change="fileChange" readonly>-->
+  <!--    <template slot="append">浏览</template>-->
+  <!--</el-input>-->
+
+    fileChange() {
+      let fileBtn = document.getElementById('uploadFileId');
+      this.nowFile = fileBtn.files[fileBtn.files.length - 1];
+      this.fileName = this.nowFile.name;
+    },
+
+5421  5403  5318 5316
+
+11/24
+    jpg(jpeg- Joint Photographic Experts Group):
+    	优点是压缩率高，对画质没有太大的影响
+	  缺点是过高的压缩率,对画质要求大于存储的传输不好
+
+     PNG 格式(Portable Network Graphics PNG)
+     	1）相对于JPEG的有损压缩方式，PNG采用的是无损压缩
+	2）支持透明度信息，在"抠图"这个概念中，就是支持透明度信息
+
+     TIFF格式(Tagged Image File Format)
+     	主要是用于编辑图像的过程，在网络上看到的比较少
+     
+     ICO格式(其实出现的比较到，只是注意的不多：例如Windows平台的图标文件格式)
+     	也是支持透明度信息  ---->  不然我们的桌面的所有图形都是方形的
+	
+	  
+	  
+	  那个上传图片和文件的写法
+	   如何让弹框只出现一个？
+	   echarts还得优化+那个点击出现恒多次城市的功能加上
+
+   之前的页签图标：
+   	html中使用：<link rel="icon" href=""></html>
+ 
+2021/12/02：自定义指令的实践
+   自定义指令相当于接近一点底层，然后DOM操作整一整了
+
+   request.post(
+                "/manager/orgPlatform/bill/download",
+                {
+                  shNo: data.shNo,
+                  shMonth: data.shMonth,
+                },
+                {
+                  responseType: "arraybuffer",
+                  needResponse: true,
+                }
+              )
+              .then((res) => {
+                if (
+                  res.status === 200 &&
+                  !!res.headers["content-type"] &&
+                  res.headers["content-type"].indexOf("json") < 0
+                ) {
+                    let fileDownload = require("js-file-download");
+                    let fileName = "";
+                    if (!!res.headers["content-disposition"])
+                      fileName = res.headers["content-disposition"].match( /filename=["](.*)["]/)[1];
+                    fileDownload(res.data, fileName);
+                } else {
+                  let data = res.data;
+                  if (!!data && data.retCode !== "00")
+                    this.$message({
+                      showClose: true,
+                      message: res.data.retMsg || "文件下载失败",
+                      type: "error",
+                    });
+                }
+              })
+21-12/07 LeeCode 笔记
+  多个循环要搞清楚：return在哪return;关键变量在哪变化
+
+ 视频笔记(es6)：函数对象和实例对象,其中的属性是没有什么关联的;    构造函数是利用new关键字的this指向实例对象,让使用起来貌似是使用了静态方法和属性
+   class Phone{
+      //静态属性   属于类不属于实例  -->  类似之前的属于构造函数不属于实例
+      static name = "手机";
+      static change() {
+        
+      }
+   }
+   *** 使用class来代替函数式构造：
+	    class中必须写简写形式：
+	       static就是构造函数自己有的,没有static就类似以前声明在prototype的
+   js的es5构造函数来实现继承：
+   	function Phone() {}
+	function SmartPhone() {
+	   Phone.call(this, ...参数)    //在class中：super(参数)就可以了
+	   this.xxx=....
+	}
+
+	//设置子级构造函数的原型
+	SmartPhone.prototype = new Phone;
+	//矫正
+	SmartPhone.prototype.constructor = SmartPhone
+
+    es6中实现类的继承 
+       1.构造方法加constructor
+       2.继承使用关键字extend   子构造方法用父构造方法用super关键字
+       ** class中不一定要写构造函数constructor：有默认的构造？类似java？
+    es6中实现方法的重写
+       就是子类在写一下同名方法覆盖父类就可以了
+       ** 子类不可以调用父类的同名方法
+      
+-----------------------------------------------------------------------------------
+    class中的get和set方法
+       使用方法：
+           get price() {
+	      return 的返回值就是        
+	   }
+	   //必须要有参数，不然报错
+	   set price(value) {
+	       
+	   }
+	使用场景：get：获取的时候会修改， set：判断输入是否合法
+   Es6的数值扩展：
+   	Number.EPSILON: 是js表示的最小精度     【只要两个数字之差小于最小精度就表示两数相等】
+	Math.abs	表示绝对值
+	2.可以写二进制或者八进制了：	let b = 0b01101
+	3.Number.isFinite:	检测一个数字是否是有限数
+	4.Math.trunc:		将数字的小数部分抹去
+   Es6中对象方法的扩展
+       1. Object.is  判断两个值是否相等
+
+       2. Object.assign 对象的合并
+
+       3. Object.setPrototypeOf  设置原型对象
+       	 使用：Object.setPrototypeOf(key, value): 给key的原型上放一个value
+	       Object.getPrototypeOf(school)
+   Es6中模块化的使用：
+   	import的默认方式： import *
+	export的默认方式： export default{}
+	都可以有as形式，可以解构形式
+	但是export多一种 --- 分别暴露形式
+	   与之对应的import 变量名 from '': 但是只有在export 是default的时候才可以使用
+	      而且在export 是default的时候，import使用解构方式，要加上default关键字
+	        所以一般的搭配都是：export default的时候使用import的简写形式
+     小习惯: 多个模块可以一起放在一个入口模块：app.js中
+     		然后在html中：<script src="app.js" type="module"/>
+    
+    Es6转码的babel使用：
+       安装的工具：babel-cli  babel-preset-evn browserify（webpack）
+       					                   项目中多使用
+	  局部安装的时候：使用npx命令，全局则直接使用babel就可以了
+	    转为CommonJs？;然后使用打包
+    	
+      npm安装后import就可以了，那么那个import又是什么？
+    
+21/12-08的一天
+    window中的f2：改名字
+    牛客网和leeCode: 牛客是acm模式，leecode是核心代码模式
+       acm需要自己定义输入和输出，针对js来说，有v8和node
+
+21/12-13的一天
+   由于插槽是一块模板：所以,对于任何一个组件,从模板种类的角度出发,其实都可以分为插槽模板和非插槽模板
+      插槽分类：匿名插槽、具名插槽、作用域插槽(数据放在子组件中)
+        正因为作用域插槽绑定了一套数据，父组件可以拿来用。于是，情况就变成了这样：
+	样式父组件说了算，但内容可以显示子组件插槽绑定的。
+
+
+   图片的上传理解和使用
+    背景图样式 
+     优化element-ui中图片的显示
+    
+21/12/20
+   ● web性能优化
+	参考回答：
+	降低请求量：合并资源，减少HTTP 请求数，minify / gzip 压缩，webP，lazyLoad。
+	加快请求速度：预解析DNS，减少域名数，并行加载，CDN 分发。
+
+	缓存：HTTP 协议缓存请求，离线缓存 manifest，离线数据缓存localStorage。
+
+	渲染：JS/CSS优化，加载顺序，服务端渲染，pipeline。
+
+21/12/21
+   1. box-sizing: border-box  padding-box  content-box
+   2. 画一条0.5px的线：
+   	1）<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	2）使用border-image
+	3）采用transform: scale()的方式
+   3. 而@import引用的css会等到页面加载结束后加载。 link方式样式的权重高于@import的。
+   4. transition和animation的区别：
+   	两者的大部分的属性相同，他们都是随着时间改变元素的属性，他们的主要区别是：
+		1）transition需要触发一个事件才可以改变属性，animation不需要才会随着时间改变
+		2）transition是过渡，两帧：from  to  而animation可以是一帧一帧的
+
+21/12/22
+   1. css中的基本布局
+	六种布局方式总结：圣杯布局、双飞翼布局、Flex布局、绝对定位布局、表格布局、网格布局。
+
+21/12/27  红宝书：第八章-对象
+   1. js中的基础运算符细分： '+'运算符 --> 1）当其中没有object或者string的时候都转为number计算
+   					   2）其中有sting就回了一锅汤，object有valueOf就先用，没有就是toSting()
+   2. 以函数的形式调用可以默认为window.方法  或者  以方法的形式调用
+   3. 构造函数的执行流程：
+   	 1. 立即创建一个新的对象  2. 将新建的对象设置为函数中的this  3. 逐行执行函数中的代码  4. 将新建的对象作为返回值返回
+	 2. es5之前：__define-Getter__()和__defineSetter__()
+	    es5之后：defineProperty() [三参] 和 defineProperties() [二参]
+	 3. Object.getOwnPropertyDescriptor()    Object.getOwnPropertyDescriptors()
+
+   4. 在es6的特性语法之前：;
+   	 对象中的两种属性(数据属性,查询器属性) Object中的方法：defineProperty和defineProperties
+	 		 getOwnPropertyDescripttor()   getOwnPropertyDescripttors()    assign()
+
+21/12/28 
+    1. 新加入的函数：instanceof  
+	obj.isPrototypeOf(obj1)：obj是obj1的原型	---> 特性值 == 原型
+	返回函数内部的特性值[[Prototype]]: Object.getPrototypeOf()   
+	通过像私有特性[[Prototype]]写入一个新值(来重新写对象的原型继承关系)：Object.setPrototypeOf()  
+	创建一个新的对象并指定原型(参数):	Object.create()
+
+	hasOwnPrototype(): 判断属性是不是实例的，不包括原型
+    2. 区分实例和原型和是否可枚举：注意--方法也是属性哦！
+    	   属性在实例还是原型： in操作符:返回true就说明存在实例上/原型上
+	   			hasOwnProperty(): 只在实例上
+	    加上一个是否可以枚举的条件： for-in: 实例或者原型上的可枚举属性(数据属性的[[Enumerable]]特新值为true)
+	                                 Object.keys(): 实例上的可枚举属性
+	     Object.getOwnPropertyNames(): 获取实例上所有的属性，无论是否可枚举
+	     	Object.getOwnProperty-Symbols()  
+
+21/12/30
+   1. 怎么学比较好：结合实际- 学了一个方法，想再实际运用中有什么作用
+   	            兴趣学习- 调节，劳逸结合，但是从不满足，不自喜
+		    定期总结- 回顾总结
+		      顶层很重要  有计划-不受外界影响：一切皆浮云
+
+   2. user Agent      web Work      工作者线程
+
+22/01/05
+ daily newCode专项联系：
+ 1. 关于性能指标的名字
+      白屏时间：    打开页面到页面有东西呈现
+      首屏时间：    屏幕东西呈现花费时间
+      可操作时间：  用户可以输入点击：默认domready时间，此时可以绑定事件
+      下载时间：    也买你资源加载并呈现出来，onload时间
+    
+22/01/06
+   1. 私有变量的访问：1）在构造函数中利用闭包   2）通过作用域链,利用子中放全局的办法   3）模块增强和模块模式 返回对象
+   2. NaN 相关：
+
+	NaN == NaN // false
+	NaN === NaN // false
+
+	// indexOf方法无法识别数组的NaN成员
+	[NaN].indexOf(NaN) // -1
+
+	// 向 Set 数据结构中加入值时认为NaN等于自身
+	let set = new Set();
+	set.add(NaN);
+	set.add(NaN);
+	console.log(set); // Set {NaN}
+
+	// Object.is()方法认为NaN等于NaN
+	Object.is(NaN, NaN) // true
+	+0 === -0 //true
+	Object.is(+0, -0) // false
+
+	// ES7中新增的数组实例方法，includes()方法认为NaN等于自身
+	[1, 2, NaN].includes(NaN) // true
+    3. html事件和dom0级的区别：（同的是都无法设置事件流）
+   	1. 前者可以加()传参，后者不然；
+	2. 前者this不是dom元素，后者是
+            Dom0的传参：  *使用call或者apply方法加参数*	
+	    	<input type="button" id="btn4" workerNum="==属性参数==" value="动态绑定事件并传递参数" />
+
+		//绑定函数
+		bindEvent(document.getElementById("btn4"),"onclick",onclickWorker,"btn=123");
+		
+		//响应函数
+		function  onclickWorker(wNum){ alert("工号为："+ wNum); }
+		
+		//执行事件绑定，将参数传给事件源
+		function bindEvent(dom, eventType , fun ,args){
+		    dom[eventType] = handleEvent;
+		    function handleEvent(){ //闭包
+			fun.call(this,args);  //给响应函数的 this 指针赋值为 dom
+		    }
+		}
+		
+		其实综合起来就是一句话：document.getElementById("btn4")["onclick"]= _ => onclickWorker("99999”);
+
+	3. dom2也不可以直接传参，支持事件流，不兼容
+
+1/7
+   1. 可以海纳百川，但是要知道那个是重要的，那个花时间要多，是本源，哪个不可以陷阱去看太久
+   2. 边学要边思考，实际中怎么用，怎么用好      不要过于的为了实现而不择手段
+
+1/8  生日周末
+   1.关于Vue Cli的东西
+       模式和环境变量：
+
+1/13 第四天的项目写的依旧不多
+   1. 过滤器函数总接收表达式的值 (之前的操作链的结果) 作为第一个参数。
+
+  
+1/17 
+   v-if和v-for不建议一起使用，因为默认v-for优先高于v-if
+   template中可以v-if，不可以v-show
+
+1/18  使用事件抛出一个值
+	html中$event代表$emit的参数
